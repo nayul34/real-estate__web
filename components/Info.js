@@ -8,6 +8,7 @@ const Info = () => {
         <p>등록번호 :</p>
         <p>등록주소 :</p>
       </SInfo>
+      <SMap />
     </SWrapper>
   );
 };
@@ -15,10 +16,20 @@ const SWrapper = styled.div`
   width: 100%;
   height: 45vh;
   background-color: skyblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 const SInfo = styled.div`
-  height: 40%;
+  height: 70%;
   width: 40%;
   background-color: white;
+  margin-right: 10px;
+`;
+const SMap = styled.main`
+  width: 40%;
+  height: 70%;
+  background-color: white;
+  margin-left: 10px;
 `;
 export default Info;

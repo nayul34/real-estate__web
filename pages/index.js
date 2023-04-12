@@ -1,5 +1,22 @@
-// our-getDomainLocale.com/
+// our-getDomainLocale.com
+import Header from "../components/header";
+import styled from "styled-components";
+import Info from "../components/Info";
+import Category from "../components/Category";
 const HomePage = () => {
-  return <h1> The Home Page</h1>;
+  return (
+    <div>
+      <Header />
+      {/* <SWrapper> */}
+      <Info />
+      <Category />
+      {/* </SWrapper> */}
+    </div>
+  );
 };
+const SWrapper = styled.div`
+  height: 60vh;
+  background-color: gray;
+  width: 100%;
+`;
 export default HomePage;
