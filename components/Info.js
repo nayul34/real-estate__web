@@ -40,8 +40,8 @@ const SMap = styled.main`
   background-color: white;
   margin-left: 10px;
   .map {
-    width: full;
-    height: 300px;
+    width: 100%;
+    height: 100%;
     border: none;
   }
 `;
