@@ -1,5 +1,5 @@
 // our-getDomainLocale.com
-import Header from "../components/header";
+import Header from "../components/Header";
 import styled from "styled-components";
 import Info from "../components/Info";
 import Category from "../components/Category";
