@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import { useState } from "react";
+import CityMenu from "./CityMenu";
+import StationMenu from "./StationMenu";
 const Category = () => {
   const [cityOpen, setCityOpen] = useState(false);
   const [stationOpen, setStationOpen] = useState(false);
@@ -10,22 +12,26 @@ const Category = () => {
     setStationOpen(true);
   };
   return (
-    <SWrapper>
-      <p className="name">Category</p>
-      <div className="category">
-        <div className="new_city" onClick={OnCityOpen}>
-          <p className="cityname">진주 혁신도시</p>
+    <div>
+      <SWrapper>
+        <p className="name">Category</p>
+        <div className="category">
+          <div className="new_city" onClick={OnCityOpen}>
+            <p className="cityname">진주 혁신도시</p>
+          </div>
+          <div className="station" onClick={OnStationOpen}>
+            <p className="station_name">진주 역세권</p>
+          </div>
         </div>
-        <div className="station" onClick={OnStationOpen}>
-          <p className="station_name">진주 역세권</p>
-        </div>
-      </div>
-    </SWrapper>
+      </SWrapper>
+      {cityOpen && <CityMenu setCityOpen={setCityOpen} />}
+      {stationOpen && <StationMenu setStationOpen={setStationOpen} />}
+    </div>
   );
 };
 const SWrapper = styled.div`
   width: 100%;
-  height: 45vh;
+  height: 35vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -35,7 +41,7 @@ const SWrapper = styled.div`
   }
   .category {
     width: 100%;
-    height: 45vh;
+    height: 30vh;
     display: flex;
     justify-content: center;
     align-items: center;
