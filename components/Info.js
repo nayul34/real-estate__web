@@ -1,13 +1,16 @@
 import styled from "styled-components";
-const Info = () => {
+
+const Info = (props) => {
   return (
     <SWrapper>
-      <SInfo>
-        <p>전화번호 : 010-9677-8644</p>
-        <p>이름 : 공효심</p>
-        <p>등록번호 :</p>
-        <p>등록주소 :</p>
-      </SInfo>
+      {props.data.map((data) => (
+        <SInfo key={data.id}>
+          <p>{data.call}</p>
+          <p>{data.name}</p>
+          <p>{data.number}</p>
+          <p>{data.address}</p>
+        </SInfo>
+      ))}
       <SMap>
         <iframe
           className="map"
@@ -20,9 +23,10 @@ const Info = () => {
     </SWrapper>
   );
 };
+
 const SWrapper = styled.div`
   width: 100%;
-  height: 45vh;
+  height: 40vh;
   background-color: skyblue;
   display: flex;
   justify-content: center;
@@ -33,6 +37,9 @@ const SInfo = styled.div`
   width: 40%;
   background-color: white;
   margin-right: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `;
 const SMap = styled.main`
   width: 40%;
