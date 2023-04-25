@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import styled from "styled-components";
 import Info from "../components/Info";
 import Category from "../components/Category";
+import Footer from "../components/Footer";
 const DUMMY_DATA = [
   {
     id: "1",
@@ -16,8 +17,11 @@ const HomePage = (props) => {
   return (
     <SWrapper>
       <Header />
-      <Info data={props.data} />
-      <Category />
+      <div className="home">
+        <Info data={props.data} />
+        <Category />
+      </div>
+      <Footer />
     </SWrapper>
   );
 };
@@ -34,5 +38,13 @@ export async function getStaticProps() {
 const SWrapper = styled.div`
   /* height: 100%; */
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  .home {
+    width: 90%;
+  }
 `;
 export default HomePage;
