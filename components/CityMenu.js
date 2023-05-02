@@ -4,7 +4,9 @@ const CityMenu = ({ setCityOpen, data }) => {
   const OnCityClose = () => {
     setCityOpen(false);
   };
-
+  const onMovePage = (URL) => {
+    window.open(URL);
+  };
   return (
     <>
       <SModalBack>
@@ -21,12 +23,32 @@ const CityMenu = ({ setCityOpen, data }) => {
             <SCategory>
               {data.map((data) => (
                 <div className="category" key={data.id}>
-                  {data.title && <button>{data.title}</button>}
+                  {data.title && (
+                    <button className="title" onClick={onMovePage()}>
+                      {data.title}
+                    </button>
+                  )}
                   <div className="choice">
-                    {data.category1 && <button>{data.category1}</button>}
-                    {data.category2 && <button>{data.category2}</button>}
-                    {data.category3 && <button>{data.category3}</button>}
-                    {data.category4 && <button>{data.category4}</button>}
+                    {data.category1 && (
+                      <button className="category_menu">
+                        {data.category1}
+                      </button>
+                    )}
+                    {data.category2 && (
+                      <button className="category_menu">
+                        {data.category2}
+                      </button>
+                    )}
+                    {data.category3 && (
+                      <button className="category_menu">
+                        {data.category3}
+                      </button>
+                    )}
+                    {data.category4 && (
+                      <button className="category_menu">
+                        {data.category4}
+                      </button>
+                    )}
                   </div>
                 </div>
               ))}
